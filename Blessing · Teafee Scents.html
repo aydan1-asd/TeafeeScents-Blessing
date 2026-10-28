@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blessing · Teafee Scents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3ead8;--card:#fbf6ea;--ink:#5a3a22;--mut:#7d6048;--line:#d6c19a;--mist:#b5cbab;--ac:#c49a3a;--at:#85651a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161c15;--card:#232a20;--ink:#f1e7d1;--mut:#c2b296;--line:#4d4d3a;--mist:#2a3a28;--at:#e3c06a}}
+:root[data-theme="dark"]{--bg:#161c15;--card:#232a20;--ink:#f1e7d1;--mut:#c2b296;--line:#4d4d3a;--mist:#2a3a28;--at:#e3c06a}
+*{box-sizing:border-box;margin:0}
+html{height:100%}
+body{min-height:100%;background:radial-gradient(120% 70% at 50% 0,color-mix(in srgb,var(--ac) 13%,var(--bg)),var(--bg) 70%) var(--bg);color:var(--ink);font:500 1.12rem/1.65 'Cormorant Garamond',Georgia,serif;display:flex;flex-direction:column;align-items:center;overflow-x:hidden;position:relative}
+[hidden]{display:none!important}
+.mt{position:fixed;left:0;bottom:0;width:100%;height:38vh;z-index:0;pointer-events:none}.mt path{fill:var(--mist)}
+#fx{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.p{position:absolute;top:-40px;opacity:0;animation:fall linear infinite}
+header,main,footer{position:relative;z-index:1}
+header{padding:1.6rem 0 0;letter-spacing:.42em;text-indent:.42em;font-size:.85rem;color:var(--mut)}
+main{flex:1 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;padding:1rem 0}
+.bag{background:none;border:0;color:inherit;font:inherit;cursor:pointer;text-align:center;padding:1rem}
+.bag svg{width:min(60vw,240px);height:auto;display:block;margin:auto;transform-origin:50% 8%;animation:sway 4.5s ease-in-out infinite;filter:drop-shadow(0 18px 14px #0003)}
+.bag.go svg{animation:shake .65s ease-in-out}
+.bag span{display:block;margin-top:1.4rem;letter-spacing:.3em;text-indent:.3em;font-size:.95rem;color:var(--at);animation:pulse 2.6s ease-in-out infinite}
+.bag:focus-visible,.x:focus-visible,footer a:focus-visible{outline:2px solid var(--ac);outline-offset:4px;border-radius:8px}
+.card{position:relative;width:min(90vw,400px);padding:2.6rem 1.7rem 2rem;border-radius:28px;text-align:center;background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 15%,var(--card)),var(--card) 50%);border:1px solid var(--line);box-shadow:0 34px 60px -24px #0006,inset 0 0 0 7px var(--card),inset 0 0 0 8px var(--line);opacity:0}
+.card.on{animation:pop .95s cubic-bezier(.2,.9,.25,1.12) forwards}
+.card.on>*{animation:rise .9s both;animation-delay:calc(var(--i)*.13s + .25s)}
+.x{position:absolute;top:18px;right:20px;width:36px;height:36px;border:0;background:none;color:var(--mut);font:400 1.8rem/1 'Cormorant Garamond',serif;cursor:pointer}
+.seal{position:relative;width:128px;height:128px;margin:.2rem auto 1.5rem;display:grid;place-items:center;border-radius:50%;font:400 4.6rem/1 'Ma Shan Zheng','Noto Serif SC','Songti SC',serif;color:var(--at);background:color-mix(in srgb,var(--ac) 14%,transparent)}
+.seal::before{content:"";position:absolute;inset:-9px;border-radius:50%;border:1.5px dashed var(--ac);animation:spin 30s linear infinite}
+h1{font-weight:600;font-size:1.75rem;line-height:1.2;letter-spacing:.34em;text-indent:.34em;text-transform:uppercase}
+.tag{margin-top:.7rem;font-style:italic;font-size:1.4rem;line-height:1.35;color:var(--at)}
+.orn{display:flex;align-items:center;gap:.8rem;margin:1.3rem 0;color:var(--ac)}.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--line)}
+.desc{max-width:30ch;margin:0 auto;color:var(--mut);font-size:1.15rem}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.7rem}
+.f{border:1px solid var(--line);border-radius:18px;padding:1rem .4rem;background:color-mix(in srgb,var(--card) 70%,transparent)}
+.f small{display:block;font-size:.78rem;letter-spacing:.2em;color:var(--mut)}
+.f b{display:flex;align-items:center;justify-content:center;gap:.5rem;height:2.6rem;margin-top:.3rem;font-size:2.3rem;font-weight:600;color:var(--at)}
+.f .c{font-size:1.5rem}.sw{width:1.5rem;height:1.5rem;border-radius:50%;background:var(--ac);box-shadow:0 0 0 3px var(--card),0 0 0 4px var(--ac)}
+footer{width:100%;padding:2rem 1.5rem 1.8rem;text-align:center;font-size:1rem;color:var(--mut)}
+.rule{display:block;width:84px;height:1px;margin:.7rem auto;background:var(--ac)}
+footer a{color:var(--at);font-weight:600;letter-spacing:.06em;text-decoration:none;border-bottom:1px solid var(--ac)}
+@keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes shake{0%,100%{transform:rotate(0)}15%{transform:rotate(-9deg) scale(1.04)}35%{transform:rotate(8deg) scale(1.06)}55%{transform:rotate(-6deg) scale(1.08)}80%{transform:rotate(3deg) scale(1.1)}}
+@keyframes pulse{50%{opacity:.45}}
+@keyframes pop{0%{opacity:0;transform:translateY(60px) scale(.82)}60%{opacity:1;transform:translateY(-8px) scale(1.02)}100%{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fall{0%{opacity:0;transform:translateY(0) rotate(0)}10%{opacity:.5}90%{opacity:.35}100%{opacity:0;transform:translate(var(--dx),115vh) rotate(var(--r))}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important}.p{display:none}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="bean" viewBox="0 0 20 28"><ellipse cx="10" cy="14" rx="8" ry="12" fill="#9a6a45" stroke="#6b4428"/><path d="M10 3c-4 6 4 16 0 22" fill="none" stroke="#4a2e1a" stroke-width="1.6"/></symbol>
+<symbol id="leaf" viewBox="0 0 24 32"><path d="M12 1C2 10 2 24 12 31 22 24 22 10 12 1Z" fill="#6f8f5a" stroke="#4a6a3c"/><path d="M12 5v26" stroke="#3f5a33" fill="none"/></symbol>
+</defs></svg>
+<svg class="mt" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true"><path opacity=".55" d="M0 200V110Q60 40 120 100T240 70T400 100V200Z"/><path opacity=".85" d="M0 200V150Q80 90 170 140T330 120T400 140V200Z"/></svg>
+<div id="fx" aria-hidden="true"></div>
+<header>TEAFEE SCENTS</header>
+<main>
+<button class="bag" id="bag" aria-label="Tap to open your fortune">
+<svg viewBox="0 0 170 210" aria-hidden="true"><g fill="none" stroke="#c49a3a" stroke-width="3.2" stroke-linecap="round"><circle cx="36" cy="72" r="7"/><path d="M33 79 28 90"/><path d="M26 92c-8 2-12 10-10 20l14 38c3 8 14 10 18 3 3-6 0-12-3-14"/></g>
+<path d="M62 44c14-10 30-10 44 0l8 20c40 26 50 80 40 118-50 20-134 20-150 0-8-40 8-92 48-118Z" fill="#f6efdc" stroke="#8a5a35" stroke-width="2.2"/>
+<path d="M60 48c8-10 14-4 24-10 10 6 16 0 24 10" fill="none" stroke="#8a5a35" stroke-width="2"/><path d="M52 66q36 12 66 0" fill="none" stroke="#c49a3a" stroke-width="3"/>
+<rect x="68" y="98" width="46" height="70" rx="22" fill="#fffaf0" fill-opacity=".75" stroke="#8a5a35" stroke-width="2"/>
+<g fill="#7a4a2a"><circle cx="76" cy="152" r="5"/><circle cx="87" cy="156" r="5"/><circle cx="98" cy="152" r="5"/><circle cx="107" cy="158" r="5"/><circle cx="82" cy="144" r="5"/><circle cx="94" cy="146" r="5"/></g>
+<path d="M88 148c2-10 8-14 16-14-1 9-7 14-16 14Z" fill="#6f8f5a" stroke="#4a6a3c"/></svg>
+<span>TAP TO OPEN YOUR FORTUNE</span></button>
+<article class="card" id="card" hidden>
+<button class="x" id="x" aria-label="Close">×</button>
+<div class="seal" style="--i:0" aria-hidden="true">福</div>
+<h1 style="--i:1">Blessing</h1>
+<p class="tag" style="--i:2">A gentle shield of grace.</p>
+<div class="orn" style="--i:3" aria-hidden="true"><svg width="22" height="24" viewBox="0 0 22 24"><path d="M11 1 2 5v8c0 5 4 8 9 10 5-2 9-5 9-10V5Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M11 17V9m0 3c-3 0-4-2-4-4 3 0 4 2 4 4Zm0 2c3 0 4-2 4-4-3 0-4 2-4 4Z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></div>
+<p class="desc" style="--i:4">Carry this token as a daily reminder of protection, gratitude, and the quiet magic looking out for you wherever you go.</p>
+<div class="facts" style="--i:5"><div class="f"><small>Lucky Number</small><b id="n">7</b></div><div class="f"><small>Lucky Color</small><b class="c"><i class="sw"></i>Gold</b></div></div>
+</article>
+</main>
+<footer><p>Follow our socials to not miss out on any updates!</p><i class="rule" aria-hidden="true"></i><a href="https://linktr.ee/TeafeeScents" target="_blank" rel="noopener">@teafeescents</a></footer>
+<script>
+const $=s=>document.querySelector(s),bag=$('#bag'),card=$('#card'),N=7,NS='http://www.w3.org/2000/svg',rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const mk=i=>{const s=document.createElementNS(NS,'svg'),u=document.createElementNS(NS,'use');u.setAttribute('href','#'+i);s.appendChild(u);return s};
+for(let i=0;i<10;i++){const s=mk(i%2?'leaf':'bean'),w=14+Math.random()*14;s.setAttribute('class','p');s.style.cssText=`left:${Math.random()*100}%;width:${w}px;height:${w*1.35}px;--dx:${Math.random()*90-45}px;--r:${Math.random()*540-270}deg;animation-duration:${12+Math.random()*10}s;animation-delay:-${Math.random()*20}s`;$('#fx').appendChild(s)}
+function burst(){if(rm)return;const top=card.getBoundingClientRect().top+110;for(let i=0;i<16;i++){const s=mk(i%2?'leaf':'bean'),a=Math.random()*6.28,d=100+Math.random()*150;s.style.cssText=`position:fixed;left:calc(50% - 11px);top:${top}px;width:22px;height:30px;z-index:5;pointer-events:none`;document.body.appendChild(s);s.animate([{transform:'translate(0,0) scale(.3)',opacity:1},{transform:`translate(${Math.cos(a)*d}px,${Math.sin(a)*d}px) rotate(${Math.random()*500-250}deg) scale(1)`,opacity:0}],{duration:1500,delay:300,easing:'cubic-bezier(.2,.7,.2,1)',fill:'both'}).onfinish=()=>s.remove()}}
+function count(){const e=$('#n');if(rm)return;let t0;e.textContent=0;const f=t=>{t0??=t;const p=Math.min((t-t0-800)/900,1);e.textContent=p<0?0:Math.round(N*p);if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+bag.onclick=()=>{bag.classList.add('go');setTimeout(()=>{bag.hidden=true;card.hidden=false;void card.offsetWidth;card.classList.add('on');burst();count();scrollTo(0,0)},rm?0:650)};
+$('#x').onclick=()=>{card.classList.remove('on');card.hidden=true;bag.classList.remove('go');bag.hidden=false;bag.focus()};
+</script></body></html>
